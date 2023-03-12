@@ -25,19 +25,19 @@ class _InitalScreenState extends State<InitalScreen> {
           children: const [
             Task(
                 'Aprender Flutter',
-                'assests/images/passaralho.png',
+                'assets/images/passaralho.png',
                 2),
             Task(
                 'Aprender React',
-                'assests/images/react.png',
+                'assets/images/react.png',
                 3),
             Task(
                 'Aprender Node',
-                'assests/images/nodejs.png',
+                'assets/images/nodejs.png',
                 5),
             Task(
                 'Aprender Redux',
-                'assests/images/Redeux.webp',
+                'assets/images/Redeux.webp',
                 4),
             Task(
                 'Aprender React Native',
