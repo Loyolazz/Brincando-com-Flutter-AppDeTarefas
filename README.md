@@ -1,6 +1,6 @@
-# nosso_primeiro_projeto
+# primeiro_app
 
-Nosso primeiro projeto em Flutter
+Primeiro App em Flutter
 
 ## Getting Started
 

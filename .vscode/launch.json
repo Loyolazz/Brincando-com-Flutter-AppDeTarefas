@@ -6,18 +6,18 @@
     "configurations": [
         
         {
-            "name": "nosso_primeiro_projeto",
+            "name": "primeiro_app",
             "request": "launch",
             "type": "dart"
         },
         {
-            "name": "nosso_primeiro_projeto (profile mode)",
+            "name": "primeiro_app (profile mode)",
             "request": "launch",
             "type": "dart",
             "flutterMode": "profile"
         },
         {
-            "name": "nosso_primeiro_projeto (release mode)",
+            "name": "primeiro_app (release mode)",
             "request": "launch",
             "type": "dart",
             "flutterMode": "release"
