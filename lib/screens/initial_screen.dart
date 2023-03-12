@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:primeiro_app/components/task.dart';
+import 'package:primeiro_app/data/task_inherited.dart';
 import 'package:primeiro_app/screens/form_screen.dart';
 
 class InitalScreen extends StatefulWidget {
@@ -18,20 +19,15 @@ class _InitalScreenState extends State<InitalScreen> {
         title: const Text('TAREFAS'),
       ),
       body: ListView(
-        children: const [
-          Task('Aprender Flutter', 'assets/images/passaralho.png', 2),
-          Task('Aprender React', 'assets/images/react.png', 3),
-          Task('Aprender Node', 'assets/images/nodejs.png', 5),
-          Task('Aprender Redux', 'assets/images/Redeux.webp', 4),
-          Task('Aprender React Native', 'assets/images/RN.jpg', 1),
-        ],
+        padding: const EdgeInsets.only(top: 8,bottom: 70),
+        children: TaskInherited.of(context).taskList,
       ),
       floatingActionButton: FloatingActionButton(
         onPressed: () {
           Navigator.push(
             context,
             MaterialPageRoute(
-              builder: (context) => const FormScreen(),
+              builder: (contextNew) => FormScreen(taskContext: context,),
             ),
           );
         },
