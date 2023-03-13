@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:primeiro_app/components/task.dart';
+import '../data/task_dao.dart';
 import '../data/task_inherited.dart';
 
 class FormScreen extends StatefulWidget {
@@ -17,15 +19,15 @@ class _FormScreenState extends State<FormScreen> {
 
   final _formKey = GlobalKey<FormState>();
 
-  bool valueValidator(String? value){
-    if(value != null && value.isEmpty){
+  bool valueValidator(String? value) {
+    if (value != null && value.isEmpty) {
       return true;
     }
     return false;
   }
-  bool difficultyValidator(String? value){
-    if(value!.isEmpty || int.parse(value) > 5 ||
-        int.parse(value) < 1){
+
+  bool difficultyValidator(String? value) {
+    if (value!.isEmpty || int.parse(value) > 5 || int.parse(value) < 1) {
       return true;
     }
     return false;
@@ -141,6 +143,11 @@ class _FormScreenState extends State<FormScreen> {
                         // print(nameController.text);
                         // print(difficultyController.text);
                         // print(imageController.text);
+                        TaskDao().save(Task(
+                            nameController.text,
+                            imageController.text,
+                            int.parse(difficultyController.text)
+                        ));
                         TaskInherited.of(widget.taskContext).newTask(
                             nameController.text,
                             imageController.text,
@@ -153,7 +160,7 @@ class _FormScreenState extends State<FormScreen> {
                         Navigator.pop(context);
                       }
                     },
-                    child: Text('Adicionar!'),
+                    child: const Text('Adicionar!'),
                   ),
                 ],
               ),
